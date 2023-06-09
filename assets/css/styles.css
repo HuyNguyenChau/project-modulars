@@ -1,0 +1,84 @@
+/* ----------Phần hệ thống---------- */
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+/* Common ( Phần dùng chung ) */
+.container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn {
+    display: inline-block;
+    min-width: 173px;
+    line-height: 57px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    background: #143c3c;
+    border: 1.5px solid #143c3c;
+    border-radius: 40px;
+    color: #ffffff;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+/* -----------------------------------------------------Phần Header--------------------------------------------------------- */
+.header {
+    padding-top: 28px;
+}
+.header-top {
+    display: flex;
+    align-items: center;
+    padding-bottom: 18px;
+    font-family: "Public Sans";
+    border-bottom: 1px solid;
+    /* Đường kẻ dưới header-top */
+    border-image: linear-gradient(
+            90deg,
+            #ffffff 0%,
+            #dddcdc 51.09%,
+            rgba(213, 213, 213, 0) 99.68%
+        )
+        1;
+}
+.navbar {
+    margin-left: auto;
+    margin-right: 88px;
+}
+.navbar__list {
+    display: flex;
+    gap: 38px;
+}
+.navbar__link {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.56;
+    color: #575d5e;
+}
+.navbar__link:hover {
+    text-shadow: 1px 1px currentColor;
+}
+.navbar__link-active {
+    color: #152427;
+}
+.navbar__link-active::after {
+    position: relative;
+    top: 25px;
+    left: 0px;
+    display: block;
+    content: "";
+    width: 16px;
+    height: 2px;
+    background: #143c3c;
+}
