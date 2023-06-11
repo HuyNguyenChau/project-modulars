@@ -6,11 +6,22 @@ html {
     font-size: 62.5%;
 }
 body {
+    background: #efefef;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
 }
 a {
     text-decoration: none;
+}
+button {
+    /* Hoặc dùng all: unset */
+    /* all: unset; */
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
 }
 /* Common ( Phần dùng chung ) */
 .container {
@@ -33,15 +44,57 @@ a {
 .btn:hover {
     opacity: 0.8;
 }
+.section-heading {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 4.2rem;
+    line-height: 1.24;
+    color: #152427;
+    max-width: 520px;
+}
+.section-heading::after {
+    margin-bottom: 10px;
+    display: inline-block;
+    content: "";
+    width: 66px;
+    height: 2px;
+    background: #152427;
+}
+/* .line {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 66px;
+    height: 2px;
+    background: #152427;
+} */
+
+.section-name {
+    display: flex;
+    align-items: center;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.62;
+    color: #152427;
+}
+.section-name::before {
+    margin-right: 21px;
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 1px;
+    background: #152427;
+}
 /* -----------------------------------------------------Phần Header--------------------------------------------------------- */
+/* ----------Header-Top---------- */
 .header {
     padding-top: 28px;
+    font-family: "Public Sans", serif;
 }
 .header-top {
     display: flex;
     align-items: center;
-    padding-bottom: 18px;
-    font-family: "Public Sans";
+    padding-bottom: 13px;
     border-bottom: 1px solid;
     /* Đường kẻ dưới header-top */
     border-image: linear-gradient(
@@ -74,11 +127,266 @@ a {
 }
 .navbar__link-active::after {
     position: relative;
-    top: 25px;
+    top: 30px;
     left: 0px;
     display: block;
     content: "";
     width: 16px;
     height: 2px;
     background: #143c3c;
+}
+/* ----------Hero---------- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    position: relative;
+}
+
+/* Phần content ( trái ) */
+.hero__content {
+    margin-top: 75px;
+    width: 393px;
+}
+.hero__heading {
+    width: 368px;
+    font-weight: 800;
+    font-size: 5rem;
+    line-height: 1.2;
+    color: #152427;
+}
+.hero__desc {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.56;
+    color: #575d5e;
+}
+/* Phần btn và nút watch-video */
+.hero__row {
+    display: flex;
+    margin-top: 42px;
+    gap: 43px;
+}
+.hero__video {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+/* Phần vòng tròn quanh icon watch-video */
+.hero__play-video {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 43px;
+    background: #83a17d;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.hero__play-video::before {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    background-image: url("/assets/icon/Ellipse-video.svg");
+    /* Nếu ko có background-repeat: no-repeat; thì background sẽ lặp lại do ảnh nhỏ hơn box ( mặc định luôn là repeat ) */
+    background-repeat: no-repeat;
+    top: -8px;
+    left: -7px;
+    width: 57px;
+    height: 59px;
+}
+.hero__watch-video {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1.67;
+    color: #152427;
+}
+/* Phần hero__media ( phải ) */
+.hero__media {
+    flex-shrink: 0;
+}
+.hero__images {
+    display: flex;
+    /* background-color: red; */
+    /* margin-top: 32px; */
+    gap: 20px;
+}
+/* Phần 3 ảnh lớn */
+.hero__img {
+    width: 202px;
+    height: 466px;
+    object-fit: cover;
+    border-radius: 110px;
+    cursor: pointer;
+}
+.hero__img-center {
+    margin-top: 77px;
+}
+
+.hero__img:hover {
+    /* box-shadow: ngang____dọc____độ-nhòe____kích-thước-của-độ-nhòe ( ngang và dọc nghĩa là bắt đầu từ px ngang và px dọc ) */
+    box-shadow: 0px 0px 137px 1px #4dbb9a;
+}
+/* ------------------- */
+.hero__media {
+    padding-top: 32px;
+    padding-bottom: 70px;
+    position: relative;
+}
+/* .hero__images-2 {
+    position: absolute;
+} */
+.hero__img-2 {
+    position: absolute;
+    /* pointer-events: none; dùng để không thể chỉ định ( Áp dụng vào mục trên khi muốn chỉ vào mục dưới nhưng đang 
+    bị mục trên đè lên */
+    pointer-events: none;
+}
+.hero__img-vector--top {
+    top: -1px;
+    right: 274px;
+}
+.hero__img-vector-bottom {
+    transform: rotate(175.95deg);
+    bottom: 0px;
+    right: 71px;
+}
+.hero__img-extra-top {
+    top: 0px;
+    left: -221px;
+}
+.hero__img-extra-bottom {
+    bottom: 30px;
+    right: 25px;
+}
+/* -----------------------------------------------------------Phần Main----------------------------------------------------- */
+.banner {
+    margin-top: 50px;
+    font-family: "Poppins";
+}
+.banner__logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 201px;
+    background: #e2eddf;
+    border-radius: 100.5px;
+}
+.banner__name--google {
+    font-weight: 500;
+    font-size: 3.1rem;
+    line-height: 46px;
+    color: #143c3c;
+}
+.banner__name--slack {
+    margin-left: 5px;
+
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 48px;
+    color: #143c3c;
+}
+.banner__name--agworld {
+    margin-left: 11px;
+    font-weight: 400;
+    font-size: 2.6rem;
+    line-height: 39px;
+    color: #163c35;
+}
+.banner__name--riotinto {
+    font-family: "Sonsie One";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.3rem;
+    line-height: 30px;
+    color: #143c3c;
+}
+.banner__name--heroku {
+    margin-left: 14px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.9rem;
+    line-height: 28px;
+    letter-spacing: 0.105em;
+    color: #143c3c;
+}
+.banner__item {
+    display: flex;
+    align-items: center;
+}
+/* ---------------------------------------------------------Phần Services--------------------------------------------------- */
+.services {
+    margin-top: 106px;
+}
+/* ----------Services-top---------- */
+.services__top {
+    display: flex;
+}
+.services-chevron {
+    margin-top: 41px;
+    display: flex;
+    margin-left: auto;
+    gap: 17px;
+}
+.services-chevron__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 54px;
+    background: #e2eddf;
+    border-radius: 50%;
+    color: #152427;
+    cursor: pointer;
+}
+.services-chevron__btn:hover {
+    background: #143c3c;
+    color: #ffffff;
+}
+/* ----------Services-content---------- */
+/* .services__img {
+    width: 200px;
+    height: 200px;
+} */
+.services__content {
+    margin-top: 76px;
+    display: flex;
+    gap: 16px;
+}
+.services__item {
+    flex: 1;
+    /* flex-shrink: 0; */
+}
+.services__img {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}
+.services__info {
+    padding-left: 18px;
+    padding-bottom: 23px;
+}
+.services__info-title {
+    display: block;
+    margin-top: 24px;
+    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: #152427;
+}
+.services__info-desc {
+    margin-top: 18px;
+    max-width: 268px;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.71;
+    color: #7d8188;
+}
+.services__item:hover {
+    background: #ffffff;
+    box-shadow: -6px 9px 64px -4px rgba(118, 118, 118, 0.25);
+    border-radius: 20px;
 }
